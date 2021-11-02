@@ -1,13 +1,17 @@
 import {useRouter} from 'next/router';
 
-const article = () => {
+const article = ({article}) => {
 
-    return <div></div>
+    return (
+        <>
+            <h1>{article.title}</h1>
+        </>
+    )
 
 }
 
 export const getServerSideProps = async (context) => {
-    const res = await fetch(`https://jsonplaceholder.typicode,com/posts/${context.params.id}`);
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`);
 
     const article = await res.json();
 
