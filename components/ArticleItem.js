@@ -1,9 +1,13 @@
 import Link from 'next/link';
 import articleStyles from '../styles/Article.module.css';
 
-const ArticleItem = () => {
+const ArticleItem = ({article}) => {
     return (
-        <div></div>
+        <Link href='/article/[id]' as={`/article/${article.id}`}>
+            <a className={articleStyles.card}>
+                <h3>{article.title} $rarr;</h3>
+            </a>
+        </Link>
     )
 }
 
