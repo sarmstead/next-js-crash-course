@@ -1,12 +1,14 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import ArticleList from '../components/ArticleList';
 
-export default function Home() {
+export default function Home({articles}) {
   return (
     <div>
       <Head>
         <title>Next.js Crash Course</title>
       </Head>
-      <h1>Welcome to Next.js</h1>
+      
+      <ArticleList articles={articles} />
     </div>
   )
 }
